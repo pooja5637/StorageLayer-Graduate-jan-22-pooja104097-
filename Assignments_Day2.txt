@@ -1,0 +1,24 @@
+1. Select the movie_name & release_date of every movie.
+>>select movie_name,release_date from movies;
+
+2. Select the first and last names of all American directors.
+>> select first_name,last_name from directors where nationality='American';
+or
+>>select first_name || ' ' || last_name from directors where nationality='American';
+
+3. Select all male actors born after the 1st of January 1970.
+>> select * from actors where gender='M' and date_of_birth > '1970-01-01';
+
+4. Select the names of all movies which are over 90 minutes long and movie language is English.
+>> select * from movies where movie_length>90 and movie_lang ='English';
+
+5. Select the movie names & movie language of all movies with a movie language of English, Spanish, or Korean.
+>>select movie_name,movie_lang from movies where movie_lang IN('English','Spanish','Korean');
+or
+>>select movie_name,movie_lang from movies where movie_lang='English' OR  movie_lang='Spanish' OR  movie_lang='Korean';
+
+6. Select the first and last names of the actors whose last name begins with M and were born between 01/01/1940 and 31/12/1969.
+>>select first_name || ' ' || last_name from actors where last_name LIKE 'M%' and (date_of_birth between '1940-01-01' and '1969-12-31');
+
+7. Select the first and last names of the directors with natioanlity of British, French or German born between 01/01/1950 and 31/12/1980.
+>>select first_name || ' ' || last_name from directors where nationality IN('British','French','German') and (date_of_birth between '1950-01-01' and '1980-12-31');
